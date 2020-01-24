@@ -11,6 +11,7 @@ class PostsController < ApplicationController
     @post.update(post_params)
     
     if @post.validate
+      @post.save
       redirect_to post_path(@post)
     else
       render "edit"
